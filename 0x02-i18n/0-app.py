@@ -5,10 +5,10 @@
 
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 
-@app.route('/'):
+@app.route('/', methods=['GET'], strict_slashes=False)
 def helloWorld() -> str:
     """
         Render template for Babel usage.
